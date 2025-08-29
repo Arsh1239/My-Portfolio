@@ -16,45 +16,57 @@
     }
 
     body {
-      background: #1a1a1a;
-      color: #fff;
+      background: #0d0d0d;
+      color: #f5f5f5;
       line-height: 1.6;
     }
 
-
+    /* Header */
     header {
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 30px;
+      padding: 20px 40px;
       position: fixed;
       top: 0;
       left: 0;
-      background: #27aae3;
+      background: rgba(15, 15, 15, 0.95);
+      border-bottom: 1px solid #222;
       z-index: 1000;
+      backdrop-filter: blur(10px);
     }
 
     header h2 {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: bold;
-      color: white;
+      background: linear-gradient(90deg, #27aae3, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 25px;
-    }
-
-    nav ul li {
-      display: inline-block;
+      gap: 30px;
     }
 
     nav ul li a {
       text-decoration: none;
-      color: white;
+      color: #fff;
       font-size: 16px;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: -5px;
+      background: #38bdf8;
       transition: 0.3s;
     }
 
@@ -62,32 +74,50 @@
       color: #38bdf8;
     }
 
+    nav ul li a:hover::after {
+      width: 100%;
+    }
 
+    /* Hamburger */
     .hamburger {
       display: none;
       flex-direction: column;
       cursor: pointer;
-      gap: 5px;
+      gap: 6px;
     }
 
     .hamburger span {
-      width: 25px;
+      width: 28px;
       height: 3px;
       background: white;
       border-radius: 2px;
-      transition: 0.3s;
+      transition: 0.4s;
     }
 
+    .hamburger.open span:nth-child(1) {
+      transform: rotate(45deg) translateY(8px);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-8px);
+    }
+
+    /* Mobile Nav */
     .mobile-nav {
       display: none;
       flex-direction: column;
-      background: #27aae3;
       position: absolute;
-      top: 60px;
+      top: 70px;
       right: 0;
       width: 100%;
+      background: #111;
       text-align: center;
       padding: 20px 0;
+      animation: slideDown 0.3s ease;
     }
 
     .mobile-nav.active {
@@ -95,120 +125,145 @@
     }
 
     .mobile-nav a {
-      padding: 10px;
+      padding: 12px;
       font-size: 18px;
-      color: white;
+      color: #fff;
       text-decoration: none;
+      transition: 0.3s;
     }
 
     .mobile-nav a:hover {
       color: #38bdf8;
     }
 
-      
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hero */
     .hero {
-      margin-top: 70px;
+      margin-top: 90px;
       text-align: center;
-      background-color: #27aae3;
-      padding: 80px 40px;
+      padding: 100px 30px;
+      background: linear-gradient(135deg, #27aae3, #38bdf8);
       color: #000;
-      background-size: cover;
-      background-position: center;
     }
 
     .hero h1 {
-      font-size: 60px;
+      font-size: 64px;
       font-weight: bold;
     }
 
     .hero p {
-      margin-top: 20px;
-      font-size: 18px;
-      display: inline;
+      margin-top: 15px;
+      font-size: 20px;
     }
 
+    /* Container */
     .container {
       max-width: 1100px;
       margin: auto;
-      padding: 20px;
+      padding: 40px 20px;
     }
 
+    /* Profile */
     .profile {
       display: flex;
       align-items: center;
-      margin-top: 40px;
-      gap: 20px;
+      gap: 25px;
       flex-wrap: wrap;
     }
 
     .profile img {
       width: 180px;
-      height: auto;
-      border-radius: 15px;
-      border: 3px solid #fff;
+      height: 180px;
+      border-radius: 50%;
+      border: 3px solid #27aae3;
+      box-shadow: 0px 0px 15px rgba(39, 170, 227, 0.5);
     }
 
-    .intro h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
+    .intro p {
+      font-size: 18px;
     }
 
     .contact {
-      margin-top: 10px;
+      margin-top: 15px;
+      font-size: 15px;
+      color: #ccc;
     }
 
-    .contact p {
-      margin: 5px 0;
-    }
-
+    /* Section */
     .section {
-      margin-top: 50px;
+      margin-top: 60px;
     }
 
     .section h2 {
       font-size: 26px;
       margin-bottom: 20px;
-      border-bottom: 2px solid #444;
-      display: inline-block;
-      padding-bottom: 5px;
+      border-left: 5px solid #27aae3;
+      padding-left: 12px;
     }
 
+    /* Timeline style */
+    .experience p strong,
+    .education p strong {
+      color: #27aae3;
+    }
+
+    /* Software Icons */
     .software-icons {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 10px;
+      gap: 20px;
     }
 
     .software-icons div {
-      background: #333;
-      padding: 10px 20px;
-      border-radius: 10px;
-      flex: 1 1 100px;
+      background: #111;
+      padding: 20px;
+      border-radius: 12px;
+      flex: 1 1 120px;
       text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .software-icons div img {
+    .software-icons div:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 0px 20px rgba(39, 170, 227, 0.5);
+    }
+
+    .software-icons img {
       width: 60px;
       height: 60px;
     }
 
+    /* Footer */
     footer {
       text-align: center;
-      margin-top: 50px;
-      padding: 20px;
-      border-top: 1px solid #444;
+      margin-top: 60px;
+      padding: 25px;
+      border-top: 1px solid #222;
+      color: #aaa;
     }
 
-    .dot {
-      color: #fff;
+    footer a {
+      margin: 0 10px;
+      color: #27aae3;
+      font-size: 18px;
+      text-decoration: none;
     }
 
-    .dotdad {
-      display: block;
-      margin-top: 40px;
+    footer a:hover {
+      color: #38bdf8;
     }
 
+    /* Responsive */
     @media (max-width: 768px) {
       nav ul {
         display: none;
@@ -219,39 +274,22 @@
       }
 
       .hero h1 {
-        font-size: 36px;
+        font-size: 42px;
       }
 
       .profile {
         flex-direction: column;
         text-align: center;
       }
-
-      .profile img {
-        width: 150px;
-      }
-
-      .intro {
-        max-width: 90%;
-      }
     }
 
     @media (max-width: 480px) {
-      header h2 {
-        font-size: 20px;
-      }
-
       .hero h1 {
-        font-size: 28px;
+        font-size: 32px;
       }
 
       .hero p {
         font-size: 16px;
-      }
-
-      .software-icons div img {
-        width: 45px;
-        height: 45px;
       }
     }
   </style>
@@ -268,8 +306,6 @@
         <li><a href="https://wa.me/919350621077" target="_blank">Contact</a></li>
       </ul>
     </nav>
-
-
     <div class="hamburger" id="hamburger">
       <span></span>
       <span></span>
@@ -277,7 +313,6 @@
     </div>
   </header>
 
-  <!-- Mobile Menu -->
   <div class="mobile-nav" id="mobileNav">
     <a href="#">Home</a>
     <a href="#">About</a>
@@ -285,20 +320,19 @@
     <a href="https://wa.me/919350621077" target="_blank">Contact</a>
   </div>
 
+  <!-- Hero -->
   <section class="hero">
     <h1>2025 Portfolio</h1>
-    <div class="dotdad">
-      <p>Video Editor <span class="dot">♦</span> Motion Designer <span class="dot">♦</span> Coder</p>
-    </div>
+    <p>Video Editor ♦ Motion Designer ♦ Coder</p>
   </section>
 
   <div class="container">
+    <!-- Profile -->
     <div class="profile">
-      <img src="https://github.com/Arsh1239/My-Portfolio/blob/main/picofme%20(19).png?raw=true" alt="Arshdeep_photo">
+      <img src="https://github.com/Arsh1239/My-Portfolio/blob/main/picofme%20(19).png?raw=true" alt="Arshdeep">
       <div class="intro">
         <p>Hey, I’m Arshdeep, 18, pursuing Computer Science at Jai Seth Prakash Polytechnic. I’m a professional video
-          editor, motion designer, and coder with a passion for creativity and technology.
-        </p>
+          editor, motion designer, and coder with a passion for creativity and technology.</p>
         <div class="contact">
           <p>📱 +91 9350621077</p>
           <p>📧 shareon230607@gmail.com</p>
@@ -307,38 +341,43 @@
       </div>
     </div>
 
+    <!-- Education -->
     <div class="section education">
       <h2>Education</h2>
-      <p><strong>2024 - Present</strong></p>
-      <p>Seth Jai Prakash Polytechnic</p>
+      <p><strong>2024 - Present</strong> — Seth Jai Prakash Polytechnic</p>
       <p>Diploma in Computer Science</p>
     </div>
 
+    <!-- Experience -->
     <div class="section experience">
       <h2>Experience</h2>
-      <p><strong>2024 Dec - Present</strong> - Techsolace</p>
-      <p>Video Editor, Motion Designer And Social Media Manager</p>
-      <p><strong>2024 Jun - Present</strong> - Self Employed</p>
-      <p>Freelencer as a Video Editor And Motion Graphic Designer</p>
+      <p><strong>Dec 2024 - Present</strong> — Techsolace</p>
+      <p>Video Editor, Motion Designer & Social Media Manager</p>
+      <p><strong>Jun 2024 - Present</strong> — Self Employed</p>
+      <p>Freelancer as Video Editor & Motion Designer</p>
     </div>
 
+    <!-- Software -->
     <div class="section software">
       <h2>Software</h2>
       <div class="software-icons">
-        <div><img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg"
-            alt="Premiere Pro"></div>
-        <div><img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg"
-            alt="After Effects"></div>
-        <div><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg"
-            alt="Illustrator"></div>
-        <div><img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg"
-            alt="Photoshop"></div>
+        <div><img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg"></div>
+        <div><img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg"></div>
+        <div><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg"></div>
+        <div><img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg"></div>
       </div>
     </div>
   </div>
 
+  <!-- Footer -->
   <footer>
     <p>© 2025 Arshdeep | Portfolio</p>
+    <div>
+      <a href="mailto:shareon230607@gmail.com">📧</a>
+      <a href="https://wa.me/919350621077" target="_blank">💬</a>
+      <a href="https://www.instagram.com/arsh_.aep" target="_blank">📸</a>
+      <a href="https://www.behance.net/arsh_" target="_blank">🎨</a>
+    </div>
   </footer>
 
   <script>
@@ -353,4 +392,3 @@
 </body>
 
 </html>
-
