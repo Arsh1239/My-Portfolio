@@ -199,7 +199,7 @@
       color: #ccc;
     }
 
-    /* Section */
+
     .section {
       margin-top: 60px;
     }
@@ -211,13 +211,12 @@
       padding-left: 12px;
     }
 
-    /* Timeline style */
+ 
     .experience p strong,
     .education p strong {
       color: #27aae3;
     }
 
-    /* Software Icons */
     .software-icons {
       display: flex;
       flex-wrap: wrap;
@@ -292,6 +291,29 @@
         font-size: 16px;
       }
     }
+
+    .hero h1 {
+  font-size: 64px;
+  font-weight: bold;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.dotdad {
+  color: #fff;
+  display: inline-flex;
+}
   </style>
 </head>
 
@@ -320,14 +342,12 @@
     <a href="https://wa.me/919350621077" target="_blank">Contact</a>
   </div>
 
-  <!-- Hero -->
   <section class="hero">
     <h1>2025 Portfolio</h1>
-    <p>Video Editor ♦ Motion Designer ♦ Coder</p>
+    <p> <p class="dotdad"> </p> Video Editor <p class="dotdad"> ♦ </p> Motion Designer <p class="dotdad"> ♦ </p> Coder</p>
   </section>
 
   <div class="container">
-    <!-- Profile -->
     <div class="profile">
       <img src="https://github.com/Arsh1239/My-Portfolio/blob/main/picofme%20(19).png?raw=true" alt="Arshdeep">
       <div class="intro">
