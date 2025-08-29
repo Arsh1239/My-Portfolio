@@ -2,247 +2,354 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Arshdeep</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Arshdeep</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'DM Sans', sans-serif;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'DM Sans', sans-serif;
+    }
 
-        body {
-            background: #1a1a1a;
-            color: #fff;
-            line-height: 1.6;
-        }
-
-        /* Navbar */
-        header {
-            width: 100%;
-            height: 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 40px 50px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: #27aae3;
-            z-index: 1000;
-        }
-
-        header h2 {
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
-
-        nav ul li {
-            display: inline-block;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #38bdf8;
-        }
-
-        /* Hero Section */
-        .hero {
-            margin-top: 80px;
-            /* avoids overlap with fixed navbar */
-            text-align: center;
-            background-color: #27aae3;
-            padding: 80px 40px;
-            color: #000;
-        }
-
-        .hero h1 {
-            font-size: 60px;
-            font-weight: bold;
-        }
-
-        .hero p {
-            margin-top: 20px;
-            padding: 10px 2px;
-            font-size: 18px;
-            display: inline;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .profile {
-            display: flex;
-            align-items: center;
-            margin-top: 40px;
-            gap: 20px;
-        }
-
-        .profile img {
-            width: 180px;
-            height: auto;
-            border-radius: 15px;
-            border: 3px solid #fff;
-        }
-
-        .intro h2 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .contact {
-            margin-top: 10px;
-        }
-
-        .contact p {
-            margin: 5px 0;
-        }
-
-        .section {
-            margin-top: 50px;
-        }
-
-        .section h2 {
-            font-size: 26px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #444;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        .software-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .software-icons div {
-            background: #333;
-            padding: 10px 20px;
-            border-radius: 10px;
-        }
-
-         .software-icons div img {
-            width: 60px;
-            height: 60px;
-        }
+    body {
+      background: #1a1a1a;
+      color: #fff;
+      line-height: 1.6;
+    }
 
 
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            border-top: 1px solid #444;
-        }
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #27aae3;
+      z-index: 1000;
+    }
 
-        .dot {
-            color: #fff;
+    header h2 {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
 
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
 
-        .dotdad {
-            display: block;
-            margin-top: 40px;
+    nav ul li {
+      display: inline-block;
+    }
 
-        }
-    </style>
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #38bdf8;
+    }
+
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: #27aae3;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .mobile-nav.active {
+      display: flex;
+    }
+
+    .mobile-nav a {
+      padding: 10px;
+      font-size: 18px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .mobile-nav a:hover {
+      color: #38bdf8;
+    }
+
+      
+    .hero {
+      margin-top: 70px;
+      text-align: center;
+      background-color: #27aae3;
+      padding: 80px 40px;
+      color: #000;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      font-weight: bold;
+    }
+
+    .hero p {
+      margin-top: 20px;
+      font-size: 18px;
+      display: inline;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      margin-top: 40px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .profile img {
+      width: 180px;
+      height: auto;
+      border-radius: 15px;
+      border: 3px solid #fff;
+    }
+
+    .intro h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .contact {
+      margin-top: 10px;
+    }
+
+    .contact p {
+      margin: 5px 0;
+    }
+
+    .section {
+      margin-top: 50px;
+    }
+
+    .section h2 {
+      font-size: 26px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #444;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .software-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .software-icons div {
+      background: #333;
+      padding: 10px 20px;
+      border-radius: 10px;
+      flex: 1 1 100px;
+      text-align: center;
+    }
+
+    .software-icons div img {
+      width: 60px;
+      height: 60px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      border-top: 1px solid #444;
+    }
+
+    .dot {
+      color: #fff;
+    }
+
+    .dotdad {
+      display: block;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .profile {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profile img {
+        width: 150px;
+      }
+
+      .intro {
+        max-width: 90%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h2 {
+        font-size: 20px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .software-icons div img {
+        width: 45px;
+        height: 45px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <header>
-        <h2>Arshdeep</h2>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="https://arsh-porfolio.framer.website/" target="_blank">Portfolio</a></li>
-                <li><a href="https://wa.me/919350621077" target="_blank">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h2>Arshdeep</h2>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="https://arsh-porfolio.framer.website/" target="_blank">Portfolio</a></li>
+        <li><a href="https://wa.me/919350621077" target="_blank">Contact</a></li>
+      </ul>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>2025 Portfolio</h1>
-        <div class="dotdad">
-                    <p>Video Editor <p class="dot">♦</p> Motion Designer <p class="dot">♦</p> Coder</p>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="https://arsh-porfolio.framer.website/" target="_blank">Portfolio</a>
+    <a href="https://wa.me/919350621077" target="_blank">Contact</a>
+  </div>
+
+  <section class="hero">
+    <h1>2025 Portfolio</h1>
+    <div class="dotdad">
+      <p>Video Editor <span class="dot">♦</span> Motion Designer <span class="dot">♦</span> Coder</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="profile">
+      <img src="image/picofme (19).png" alt="Arshdeep">
+      <div class="intro">
+        <p>Hey, I’m Arshdeep, 18, pursuing Computer Science at Jai Seth Prakash Polytechnic. I’m a professional video
+          editor, motion designer, and coder with a passion for creativity and technology.
+        </p>
+        <div class="contact">
+          <p>📱 +91 9350621077</p>
+          <p>📧 shareon230607@gmail.com</p>
+          <p>Behance: Arsh_ | Instagram: arsh_.aep</p>
         </div>
-
-    </section>
-
-    <div class="container">
-        <div class="profile">
-            <img src="picofme (19).png" alt="Arshdeep">
-            <div class="intro">
-                <p>Hey, I’m Arshdeep, 18, pursuing Computer Science at Jai Seth Prakash Polytechnic. I’m a professional
-                    video editor, motion designer, and coder with a passion for creativity and technology.
-                </p>
-                <div class="contact">
-                    <p>📱 +91 9350621077</p>
-                    <p>📧 shareon230607@gmail.com</p>
-                    <p>Behance: Arsh_ | Instagram: arsh_.aep</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section education">
-            <h2>Education</h2>
-            <p><strong>2024 - Present</strong></p>
-            <p>Seth Jai Prakash Polytechnic</p>
-            <p>Diploma in Computer Science</p>
-        </div>
-
-        <div class="section experience">
-            <h2>Experience</h2>
-            <p><strong>2024 Dec - Present</strong> - Techsolace</p>
-            <p>Video Editor, Motion Designer And Social Media Manager</p>
-            <p><strong>2024 Jun - Present</strong> - Self Employed</p>
-            <p>Freelencer as a Video Editor And Motion Graphic Designer</p>
-        </div>
-
-        <div class="section software">
-            <h2>Software</h2>
-            <div class="software-icons">
-                <div><img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/120px-Adobe_Premiere_Pro_CC_icon.svg.png?20210729021549"
-                        alt="Adobe_Premiere_Pro_CC_icon"></div>
-                <div><img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/120px-Adobe_After_Effects_CC_icon.svg.png?20210519030120"
-                        alt="Adobe_After_Effects_CC_icon"></div>
-                <div><img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/120px-Adobe_Illustrator_CC_icon.svg.png?20220814183839"
-                        alt="Adobe_Illustrator_CC_icon"></div>
-                <div><img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/120px-Adobe_Photoshop_CC_icon.svg.png?20200616073617"
-                        alt="Adobe_Photoshop_CC_icon"></div>
-            </div>
-        </div>
+      </div>
     </div>
 
-    <footer>
-        <p>© 2025 Arshdeep | Portfolio</p>
-    </footer>
+    <div class="section education">
+      <h2>Education</h2>
+      <p><strong>2024 - Present</strong></p>
+      <p>Seth Jai Prakash Polytechnic</p>
+      <p>Diploma in Computer Science</p>
+    </div>
+
+    <div class="section experience">
+      <h2>Experience</h2>
+      <p><strong>2024 Dec - Present</strong> - Techsolace</p>
+      <p>Video Editor, Motion Designer And Social Media Manager</p>
+      <p><strong>2024 Jun - Present</strong> - Self Employed</p>
+      <p>Freelencer as a Video Editor And Motion Graphic Designer</p>
+    </div>
+
+    <div class="section software">
+      <h2>Software</h2>
+      <div class="software-icons">
+        <div><img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg"
+            alt="Premiere Pro"></div>
+        <div><img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg"
+            alt="After Effects"></div>
+        <div><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg"
+            alt="Illustrator"></div>
+        <div><img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg"
+            alt="Photoshop"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Arshdeep | Portfolio</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const mobileNav = document.getElementById("mobileNav");
+
+    hamburger.addEventListener("click", () => {
+      mobileNav.classList.toggle("active");
+      hamburger.classList.toggle("open");
+    });
+  </script>
 </body>
 
 </html>
