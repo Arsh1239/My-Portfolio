@@ -106,19 +106,19 @@
       transform: rotate(-45deg) translateY(-8px);
     }
 
-    /* Mobile Nav */
-    .mobile-nav {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 70px;
-      right: 0;
-      width: 100%;
-      background: #111;
-      text-align: center;
-      padding: 20px 0;
-      animation: slideDown 0.3s ease;
-    }
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 100%;
+  background: #111;
+  text-align: center;
+  padding: 20px 0;
+  animation: slideDown 0.3s ease;
+  z-index: 2000;
+}
 
     .mobile-nav.active {
       display: flex;
@@ -344,7 +344,7 @@
 
   <section class="hero">
     <h1>2025 Portfolio</h1>
-    <p> <p class="dotdad"> </p> Video Editor <p class="dotdad"> ♦ </p> Motion Designer <p class="dotdad"> ♦ </p> Coder</p>
+    <p> <p class="dotdad"> ♦ </p> Video Editor <p class="dotdad"> ♦ </p> Motion Designer <p class="dotdad"> ♦ </p> Coder</p>
   </section>
 
   <div class="container">
